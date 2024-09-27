@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+        h1{color:brown;
+            text-align:center;
+            margin-top:5%;
+            font-size:50px;
+            font-weight: bolder;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+            }
+        .heading{height: 150px;
+            background: rgb(157, 156, 156);
+            margin: 0;
+            padding: 0;
+            display: flex; /
+            align-items: center;
+            justify-content: center;}
+        body{
+            background:#e0dcdc;
+            margin: 0;
+            padding: 0; }
+
+        .card-deck{
+             margin:5% 5% 5% 5%;}
+        .card-img-top{
+
+            height:250px;
+            width:100%;
+            object-fit: cover;}
+        .card{
+             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);}
+  span{
+            float: right;
+            color:green;
+        }
+        .card-title{color:brown;}
+
+    </style>
+</head>
+<body>
+<div class="heading">
+<h1>  Menu  selections</h1>
+</div>
+
+<div class="card-deck">
+  <div class="card">
+    <img src="{% static 'images/foood1.jpeg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Pizza</h5>
+      <p class="card-text">Price <span>₹200/-</span></p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="{% static 'images/foood2.jpeg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Cake</h5>
+      <p class="card-text"><p class="card-text">Price <span>₹200/-</span></p></p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="{% static 'images/fuud.jpeg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Alfaham</h5>
+      <p class="card-text"><p class="card-text">Price <span>₹200/-</span></p></p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+
+   <div class="card">
+    <img src="{% static 'images/fuud2.jpeg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Mandi rice</h5>
+      <p class="card-text"><p class="card-text">Price <span>₹200/-</span></p></p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="card-deck">
+  <div class="card">
+    <img src="{% static 'images/fud2.jpeg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Chicken kabab</h5>
+      <p class="card-text"><p class="card-text">Price <span>₹200/-</span></p></p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="{% static 'images/fud3.jpeg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">burger</h5>
+      <p class="card-text"><p class="card-text">Price <span>₹200/-</span></p></p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="{% static 'images/fud.jpeg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Fried chicken</h5>
+      <p class="card-text"><p class="card-text">Price <span>₹200/-</span></p></p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+
+   <div class="card">
+    <img src="{% static 'images/fuud.jpeg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Chicken Fry</h5>
+      <p class="card-text"><p class="card-text">Price <span style="text-align:right;">₹200/-</span></p></p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</body>
+</html>

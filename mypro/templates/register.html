@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page with Image</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #c6b08e;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: 1000px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .image-section {
+            width: 50%;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: 100%;
+            object-fit:cover;
+            border-radius: 10px 0 0 10px;
+
+
+        }
+
+        .form-section {
+            width: 50%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-section h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .input-field {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-field input {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            border: 1px solid #6185749f;
+            border-radius: 5px;
+            background-color: #f5f5f5c1;
+            transition: border-color 0.3s ease;
+            outline: none;
+        }
+
+        .input-field input:focus {
+            border-color: #007bff;
+        }
+
+        .input-field label {
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background-color: rgb(249, 255, 249);
+            padding: 0 5px;
+            font-size: 14px;
+            color: #888;
+        }
+
+
+        .register-btn {
+            background-color: #5772669f;
+            color: white;
+            padding: 12px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 107.5%;
+            transition: background-color 0.3s ease;
+        }
+
+        .register-btn:hover {
+            background-color: #2f4639d3;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Image Section (Left Side) -->
+        <div class="image-section">
+            <img src="{% static 'images/reg-1.jpeg' %}" alt="Register Image" >
+        </div>
+
+        <!-- Form Section (Right Side) -->
+        <div class="form-section">
+
+            <form class="register-form" method="post" style="padding-right: 15px;">
+                  {% csrf_token %}
+                <h2>Create Account</h2>
+                <div class="input-field">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+<!--                <div class="input-field">-->
+<!--                    <label for="name">Full Name</label>-->
+<!--                    <input type="text" id="name" name="fullname" placeholder="Enter your full name" required>-->
+<!--                </div>-->
+                <div class="input-field">
+                    <label for="email">Email</label>
+
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+<!--                <div class="input-field">-->
+<!--                    <label for="phone">Phone Number</label>-->
+<!--                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>-->
+<!--                </div>-->
+                <input type="submit" value="Register" class="register-btn">
+                <p style="font-size: smaller;">already have an account? <a href="{% url 'logi' %}" style="text-decoration: none;">login</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

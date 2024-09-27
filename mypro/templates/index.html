@@ -1,0 +1,255 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            letter-spacing: 0.04em;
+        }
+
+        .small-image {
+            height: 70px;
+            width: 130px;
+        }
+
+        div > #mainback {
+            background-color: white !important;
+        }
+
+        .navbar-brand {
+            margin-left: 80px;
+        }
+
+        .searchbar {
+            width: auto;
+            min-width: 400px;
+        }
+
+        .input-group-text {
+            background: #f0f5ff;
+
+            border-right: none;
+            border: none;
+            margin-bottom: 2px;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .form-control {
+            background-color: #f0f5ff;
+            border: none;
+            border-left: none;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .login-drop {
+            margin-left: 25px;
+
+        }
+
+
+
+        .flip {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        .search {
+            width: 730px;
+        }
+
+        .navbar .dropdown-toggle::after {
+            display: none !important;
+        }
+
+        .dropdown-menu {
+            right: 0;
+            left: auto;
+            min-width: 100px;
+            max-width: 250px;
+            width: auto;
+            font-size: 14px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        }
+
+        .login-drop:hover {
+            background-color: #2874f0;
+            color: white;
+            border-radius: 7px;
+        }
+
+
+        .login-drop:hover .fa-circle-user,
+        .login-drop:hover span,
+        .login-drop:hover .fa-chevron-down {
+            color: white !important;
+        }
+
+
+        .chevron-down {
+            transition: transform 0.3s ease;
+        }
+
+        .login-drop:hover .chevron-down {
+            transform: rotate(180deg);
+        }
+
+
+        .dropdown-menu-left {
+            right: 0;
+            left: auto;
+        }
+
+
+
+.login-drop .dropdown-menu {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.login-drop:hover .dropdown-menu,
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+.login-drop .dropdown-item .fa-circle-user {
+    color: black !important ;
+}
+.login-drop .dropdown-item .large {
+    color:black  !important ;
+    font-size:17px !important;
+
+}
+.login-drop .dropdown-item .blue {
+    color:blue  !important ;
+       font-size:17px;
+
+
+
+
+    </style>
+</head>
+<body>
+
+<!-- Nav bar starts here -->
+
+<div class="main-nav" id="mainback">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <a class="navbar-brand" href="#"><img src="{% static 'images/flip.png' %}" class="small-image"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+                <!-- Search bar with icon inside -->
+                <div class="input-group searchbar search">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <input class="form-control" type="search" placeholder="Search for Products, Brands and More" aria-label="Search" aria-describedby="basic-addon1">
+                </div>
+
+                <!-- Login Dropdown -->
+                <div class="login-drop">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-regular fa-circle-user" style="color:black;"> </i>
+                            <span style="color:black; margin-left:8px">Login</span>
+                            <i class="fa-solid fa-chevron-down chevron-down" style="color:black; font-size: 12px; "></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <p class="dropdown-item no-hover-background" href="#" style="border-bottom:1px solid #adaada;">
+                               <span class="large">New customer?     </span> <a class="blue" href="#" style="text-decoration:none;"> &nbsp;&nbsp;&nbsp;&nbsp;Sign Up</a>
+                            </p >
+                            <a class="dropdown-item" href="#">
+                                <i class="fa-regular fa-circle-user" ></i> My Profile
+                            </a>
+                            <a class="dropdown-item" href="#" style="font-weight:1px;">
+                               <i class="fa-regular fa-sun"></i> Flipkart Plus Zone
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa-solid fa-box"></i> Orders
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fa-regular fa-heart"></i> Wishlist
+                            </a>
+                            <a class="dropdown-item" href="#">
+                               <i class="fa-solid fa-gift"></i> Rewards
+                            </a>
+                            <a class="dropdown-item" href="#">
+                               <i class="fa-regular fa-credit-card"></i> Gift Cards
+                            </a>
+                        </div>
+                    </li>
+                </div>
+
+                <!-- Cart -->
+                <div class="cart flip" style="margin-left:35px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                    </svg>
+                    <span class="hide">Cart</span>
+                </div>
+
+                <!-- Seller -->
+                <div class="seller flip" style="margin-left:35px;">
+                    <i class="fa-solid fa-store"></i>
+                    <span>Become a Seller</span>
+                </div>
+
+                <!-- Additional Dropdown -->
+
+<div class="nav-item dropdown" style="margin-left:45px">
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+            <path d="M9.5 7a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-10a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+        </svg>
+    </a>
+    <div class="dropdown-menu dropdown-menu-left">
+        <a class="dropdown-item" href="#">
+           <i class="fa-regular fa-bell"></i> Notification Preferences
+        </a>
+        <a class="dropdown-item" href="#">
+           <i class="fa-solid fa-headset"></i> 24x7 Customer Care
+        </a>
+        <a class="dropdown-item" href="#">
+           <i class="fa-solid fa-arrow-trend-up"></i> Advertise
+        </a>
+        <a class="dropdown-item" href="#">
+           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+  <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+  <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+</svg> Download App
+        </a>
+    </div>
+</div>
+
+
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<!-- Nav bar ends here -->
+
+<!-- Bootstrap and jQuery scripts -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
